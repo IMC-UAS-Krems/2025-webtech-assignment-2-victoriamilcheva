@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>VicAid - Donation Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Inconsolata:wght@200..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="top-promo text-center small py-1">
+        20% extra donated today for all purchases over €50!
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase" href="#">
+                VicAid
+                <span class="fw-normal small d-block text-muted">Charitable Online Donation Shop</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#gallery">Donate</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cartSection">Cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                </ul>
+                <button class="btn btn-cart ms-lg-3" id="navCartBtn">
+                    Cart <span class="badge bg-dark" id="navCartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-4">
+        <div class="container">
+            <section class="row mb-4">
+                <div class="col-lg-8">
+                    <h1 class="display-6 fw-semibold">Be the change you want to see.</h1>
+                    <p class="lead text-muted">
+                        Choose from our curated donation packs. Every purchase turns into food,
+                        medicine and shelter for families in crisis.
+                    </p>
+                    <p class="mb-0">
+                        <span class="badge rounded-pill text-bg-success me-2">100% Charitable</span>
+                        <span class="badge rounded-pill text-bg-secondary">Tax-deductible receipt</span>
+                    </p>
+                </div>
+                <div class="col-lg-4 d-flex align-items-center">
+                    <div class="w-100">
+                        <div class="progress mb-2" role="progressbar" aria-label="Donation goal progress">
+                            <div class="progress-bar" style="width: 40%" id="donationProgress"></div>
+                        </div>
+                        <p class="small text-muted mb-0">
+                            <span id="donationRaised">€0</span> raised today –
+                            help us reach <strong>€500</strong>.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section id="gallery" class="mb-5">
+                <h2 class="h4 mb-3">Donation packs</h2>
+                <div class="row g-4">
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card donation-card h-100">
+                            <img src="img/food-pack.jpg" class="card-img-top" alt="Emergency Food Pack">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Emergency Food Pack</h5>
+                                <p class="card-text small text-muted flex-grow-1">
+                                    Provides staple food for a family for 3 days.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price">€25.00</span>
+                                    <button class="btn btn-sm btn-outline-dark add-to-cart-btn"
+                                        data-name="Emergency Food Pack" data-price="25">
+                                        Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card donation-card h-100">
+                            <img src="img/med-kit.webp" class="card-img-top" alt="Basic Medical Kit">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Basic Medical Kit</h5>
+                                <p class="card-text small text-muted flex-grow-1">
+                                    Bandages, disinfectant and pain relief for emergencies.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price">€18.00</span>
+                                    <button class="btn btn-sm btn-outline-dark add-to-cart-btn"
+                                        data-name="Basic Medical Kit" data-price="18">
+                                        Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card donation-card h-100">
+                            <img src="img/school-set.jpg" class="card-img-top" alt="School Starter Set">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">School Starter Set</h5>
+                                <p class="card-text small text-muted flex-grow-1">
+                                    Backpack, notebooks and pens for one child.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price">€30.00</span>
+                                    <button class="btn btn-sm btn-outline-dark add-to-cart-btn"
+                                        data-name="School Starter Set" data-price="30">
+                                        Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card donation-card h-100">
+                            <img src="img/hygiene-pack.webp" class="card-img-top" alt="Hygiene Pack">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Hygiene Pack</h5>
+                                <p class="card-text small text-muted flex-grow-1">
+                                    Soap, toothbrushes and sanitary products.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price">€15.00</span>
+                                    <button class="btn btn-sm btn-outline-dark add-to-cart-btn" data-name="Hygiene Pack"
+                                        data-price="15">
+                                        Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card donation-card h-100">
+                            <img src="img/shelter-kit.jpg" class="card-img-top" alt="Emergency Shelter Kit">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Emergency Shelter Kit</h5>
+                                <p class="card-text small text-muted flex-grow-1">
+                                    Warm blankets and tarpaulin for temporary shelter.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price">€40.00</span>
+                                    <button class="btn btn-sm btn-outline-dark add-to-cart-btn"
+                                        data-name="Emergency Shelter Kit" data-price="40">
+                                        Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card donation-card h-100">
+                            <img src="img/baby-care.png" class="card-img-top" alt="Baby Care Bundle">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Baby Care Bundle</h5>
+                                <p class="card-text small text-muted flex-grow-1">
+                                    Formula, diapers and wipes for infants in need.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price">€32.00</span>
+                                    <button class="btn btn-sm btn-outline-dark add-to-cart-btn"
+                                        data-name="Baby Care Bundle" data-price="32">
+                                        Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card donation-card h-100">
+                            <img src="img/filter-kit.webp" class="card-img-top" alt="Water Filter Kit">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Water Filter Kit</h5>
+                                <p class="card-text small text-muted flex-grow-1">
+                                    Portable filters for clean drinking water.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price">€22.00</span>
+                                    <button class="btn btn-sm btn-outline-dark add-to-cart-btn"
+                                        data-name="Water Filter Kit" data-price="22">
+                                        Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card donation-card h-100">
+                            <img src="img/warm-coat.webp" class="card-img-top" alt="Warm Coats for Kids">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Warm Coats for Kids</h5>
+                                <p class="card-text small text-muted flex-grow-1">
+                                    Keeps two children warm during winter.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price">€45.00</span>
+                                    <button class="btn btn-sm btn-outline-dark add-to-cart-btn"
+                                        data-name="Warm Coats for Kids" data-price="45">
+                                        Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card donation-card h-100">
+                            <img src="img/solar-lamp.webp" class="card-img-top" alt="Solar Lamp Set">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Solar Lamp Set</h5>
+                                <p class="card-text small text-muted flex-grow-1">
+                                    Safe light source for families without electricity.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price">€28.00</span>
+                                    <button class="btn btn-sm btn-outline-dark add-to-cart-btn"
+                                        data-name="Solar Lamp Set" data-price="28">
+                                        Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card donation-card h-100">
+                            <img src="img/voucher.jpg" class="card-img-top" alt="Monthly Support Voucher">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Monthly Support Voucher</h5>
+                                <p class="card-text small text-muted flex-grow-1">
+                                    Flexible support for where it is needed most.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price">€55.00</span>
+                                    <button class="btn btn-sm btn-outline-dark add-to-cart-btn"
+                                        data-name="Monthly Support Voucher" data-price="55">
+                                        Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card donation-card h-100">
+                            <img src="img/family-hygiene-kit.webp" class="card-img-top" alt="Family Hygiene Mega Pack">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Family Hygiene Mega Pack</h5>
+                                <p class="card-text small text-muted flex-grow-1">
+                                    Extended hygiene supplies for a family of four for one month.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price">€50.00</span>
+                                    <button class="btn btn-sm btn-outline-dark add-to-cart-btn"
+                                        data-name="Family Hygiene Mega Pack" data-price="50">
+                                        Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card donation-card h-100">
+                            <img src="img/farmer-box.jpg" class="card-img-top" alt="Local Farmer Support Box">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Local Farmer Support Box</h5>
+                                <p class="card-text small text-muted flex-grow-1">
+                                    Seeds and tools to help one small farmer restart their livelihood.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price">€28.00</span>
+                                    <button class="btn btn-sm btn-outline-dark add-to-cart-btn"
+                                        data-name="Local Farmer Support Box" data-price="28">
+                                        Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> 
+            </section>
+
+
+            <div class="alert alert-success d-none" role="alert" id="addedAlert">
+                Item added to your donation cart!
+            </div>
+            <section id="cartSection" class="mb-5">
+                <div class="row cart-layout">
+                    <div class="col-lg-8 mb-4 mb-lg-0">
+                        <div class="cart-box">
+                            <h2 class="h4 mb-3">Donation Cart</h2>
+                            <div class="table-responsive">
+                                <table class="table align-middle">
+                                    <thead class="small text-uppercase text-muted">
+                                        <tr>
+                                            <th scope="col">Item</th>
+                                            <th scope="col" class="text-end">Price</th>
+                                            <th scope="col" class="text-center">Quantity</th>
+                                            <th scope="col" class="text-end">Subtotal</th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="cartItems">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="small text-muted mb-0" id="emptyCartText">
+                                Your cart is empty. Add donation packs above to get started.
+                            </p>
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="h6 mb-3 text-uppercase">Many donors also chose:</h3>
+                            <div class="row g-3 small-reco-row">
+                                <div class="col-12 col-sm-4">
+                                    <div class="reco-card">
+                                        <div class="small text-muted">Snack Pack for Kids</div>
+                                        <div class="fw-semibold">€12.00</div>
+                                        <button class="btn btn-sm btn-outline-dark mt-2 add-to-cart-btn"
+                                            data-name="Snack Pack for Kids" data-price="12">
+                                            Add to cart
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="reco-card">
+                                        <div class="small text-muted">Winter Blanket Bundle</div>
+                                        <div class="fw-semibold">€20.00</div>
+                                        <button class="btn btn-sm btn-outline-dark mt-2 add-to-cart-btn"
+                                            data-name="Winter Blanket Bundle" data-price="20">
+                                            Add to cart
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="reco-card">
+                                        <div class="small text-muted">Clean Water Tablets</div>
+                                        <div class="fw-semibold">€8.00</div>
+                                        <button class="btn btn-sm btn-outline-dark mt-2 add-to-cart-btn"
+                                            data-name="Clean Water Tablets" data-price="8">
+                                            Add to cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="summary-box">
+                            <p class="small text-muted mb-1">
+                                <span id="itemsToDiscount"></span>
+                            </p>
+                            <div class="progress mb-3">
+                                <div class="progress-bar" id="discountProgress" style="width: 0%"></div>
+                            </div>
+
+                            <ul class="list-unstyled mb-3 small">
+                                <li class="d-flex justify-content-between">
+                                    <span>Subtotal:</span>
+                                    <span id="summarySubtotal">€0.00</span>
+                                </li>
+                                <li class="d-flex justify-content-between">
+                                    <span>Discount (3+ items):</span>
+                                    <span id="summaryDiscount">– €0.00</span>
+                                </li>
+                                <li class="d-flex justify-content-between">
+                                    <span>Tax (7%):</span>
+                                    <span id="summaryTax">€0.00</span>
+                                </li>
+                                <li class="d-flex justify-content-between fw-semibold border-top pt-2 mt-2">
+                                    <span>Total donation:</span>
+                                    <span id="summaryTotal">€0.00</span>
+                                </li>
+                            </ul>
+
+                            <button class="btn btn-primary w-100 mb-2" id="checkoutBtn">
+                                Proceed to checkout
+                            </button>
+                            <button class="btn btn-outline-secondary w-100" id="continueShoppingBtn">
+                                Continue browsing
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="checkoutSection" class="mb-5 d-none">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2 class="h4 mb-3">Checkout - Donor info</h2>
+                        <form class="needs-validation" id="checkoutForm" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="firstName" class="form-label">First name</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your first name.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lastName" class="form-label">Last name</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your last name.
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email address.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" id="phone" maxlength="15" required>
+                                    <div class="invalid-feedback">
+                                        Phone must contain numbers only.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="zip" class="form-label">ZIP / Postal code</label>
+                                    <input type="text" class="form-control" id="zip" maxlength="6" required>
+                                    <div class="invalid-feedback">
+                                        ZIP code must be a maximum of 6 characters.
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="address" class="form-label">Street &amp; number</label>
+                                    <input type="text" class="form-control" id="address" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your address.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="city" class="form-label">City</label>
+                                    <input type="text" class="form-control" id="city" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your city.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="country" class="form-label">Country</label>
+                                    <input type="text" class="form-control" id="country" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your country.
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="note" class="form-label">Note to our team (optional)</label>
+                                    <textarea id="note" class="form-control" rows="3"
+                                        placeholder="Is this donation in honour of someone?"></textarea>
+                                </div>
+                            </div>
+
+                            <hr class="my-4"> <!-- https://www.w3schools.com/tags/tag_hr.asp -->
+
+                            <button class="btn btn-primary" type="submit">
+                                Confirm donation
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="summary-box">
+                            <h3 class="h6 mb-2 text-uppercase">Order summary</h3>
+                            <div id="checkoutSummary">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="confirmationSection" class="mb-5 d-none">
+                <div class="confirmation-box">
+                    <h2 class="h4 mb-3">Thank you for your donation!</h2>
+                    <p class="text-muted">
+                        A confirmation email has been sent to <span id="confEmail"></span>.
+                        Below is a summary of your donation; this serves as your receipt.
+                    </p>
+                    <div id="confirmationDetails"></div>
+
+                    <button class="btn btn-outline-dark mt-3" id="backToStartBtn">
+                        Make another donation
+                    </button>
+                </div>
+            </section>
+            <section id="about" class="pt-4 border-top">
+                <p class="small text-muted mb-0">
+                    VicAid is all pure fiction!
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer mt-auto py-3">
+        <div class="container small text-muted d-flex justify-content-between flex-wrap">
+            <span>2025 HopeAid</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script src="js/scripts.js" defer></script>
+</body>
+
+</html>

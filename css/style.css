@@ -1,0 +1,81 @@
+body {
+    font-family: "Inconsolata", monospace;;
+    background-color: white;
+    color: #333;
+}
+
+.top-promo {
+    background-color: #f8c7c1;
+    color: #7a3b2f;
+    letter-spacing: 0.04em;
+}
+
+.navbar-brand {
+    letter-spacing: 0.1em;
+    font-size: 1.1rem;
+}
+
+.btn-cart {
+    border-radius: 999px;
+    border: 1px solid #222;
+    background-color: white;
+    font-size: 0.9rem;
+}
+
+.btn-cart:hover {
+    background-color: white;
+}
+
+.price {
+    font-weight: 600;
+}
+
+.donation-card img {
+    object-fit: cover;
+    height: 170px;
+}
+
+.cart-layout .cart-box,
+.summary-box,
+.confirmation-box {
+    background-color: white;
+    border-radius: 4px;
+    padding: 1.5rem;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.04);
+}
+
+.cart-box table th,
+.cart-box table td {
+    border-color: #f0ece6;
+}
+
+.small-reco-row .reco-card {
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.03);
+}
+
+.btn-primary {
+    background-color: #b35a2a;
+    border-color: #b35a2a;
+}
+
+.btn-primary:hover {
+    background-color: #91461f;
+    border-color: #91461f;
+}
+
+.footer {
+    background-color: white;
+}
+
+#confirmationDetails table {
+    border-color: white;
+}
+
+input[type=number].item-qty::-webkit-inner-spin-button,
+input[type=number].item-qty::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
